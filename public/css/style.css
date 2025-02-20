@@ -1,0 +1,123 @@
+body{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+.navbar{
+    height: 5rem;
+background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+ color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+  text-decoration: underline;
+}
+.f-info-links{
+    width: 100%;
+    margin-top: 1rem;
+}
+.f-info-socials{
+    width: 100%;
+
+
+}
+
+.f-info-links,
+.f-info-socials{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.info { 
+    
+    text-align: center;
+    height: 8rem ;
+    background-color: #ebebeb;
+   flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  
+  bottom: 0;
+  
+}
+
+/* card */
+.listing-card{
+    border: none ;
+    margin-bottom: 2rem !important;
+  
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    opacity: 1;
+}
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+.listings-link{
+    color: #222222 !important;
+    text-decoration: none !important;
+}
+.card-img-top:hover{
+    opacity: 0.85;
+}
+
+.card-img-show{
+   
+    margin-bottom: 1rem;
+    height: 18rem;
+    width: 40rem;
+    border-radius: 2rem;
+}
+.edit-btn{
+    height: 2.5rem !important;
+    background-color: red !important;
+}
+.btns{
+    display: flex;
+}
+.card{
+    
+    display: inline !important ;
+
+}
+
+.div a{
+    color: #222222 !important;
+    text-decoration: none !important;
+}
+.review-rating{
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
