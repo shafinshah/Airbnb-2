@@ -10,7 +10,7 @@ body{
 }
 .navbar{
     height: 5rem;
-background-color: white;
+background-color: white !important;
 }
 .fa-compass{
     color: #fe424d;
@@ -120,4 +120,69 @@ background-color: white;
     display: flex !important;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+
+.nav-serach input{
+    width: 20rem;
+    border-radius: 5px;
+    padding: 2px 2px 2px 2px;
+    border-color: #fe424d;
+}
+.nav-serach input:hover{
+    box-shadow: 1px 1px 1px 1px #f09399;
+
+}
+.nav-serach button{
+  border-color: #fe424d;
+    color: #fe424d;
+}
+.nav-serach button:hover{
+    background-color:  #fe424d;
+}
+.nav-serach button:checked{
+        background-color:  #fe424d;
+}
+.search{
+    display: flex;
+    margin: 2rem 0rem 2rem 7rem;
+  
+}
+.search form button{
+     border-color: #fe424d;
+    color: #fe424d;
+}
+.search form button:hover{
+       background-color:  #fe424d;
+}
+.search form button:checked{
+      background-color:  #fe424d;
+}
+.index-top{
+      display: flex;
+      justify-content: space-between;
+}
+@media(max-width:390px){
+    .search form input{
+      height: 2rem;
+      width: 6em;
+font-size: smaller;
+    }
+     .search form button{
+        height: 2rem;
+        width: 3rem;
+        font-size: xx-small;
+     }
+     .search {
+        margin-left: 0rem !important;
+        display: block;
+        border: black;
+     }
+    .fillter{
+        display: none;
+    }
+    .tax-toggle{
+       display: none !important;
+    }
+
 }

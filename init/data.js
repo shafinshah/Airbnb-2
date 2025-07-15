@@ -11,7 +11,7 @@ const sampleListings = [
       country: "United States",
     },
     {
-      title: "Modern Loft in Downtown",
+      title: "Modern Loft in Downtoun",
       description:
         "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
       image: 
@@ -26,7 +26,7 @@ const sampleListings = [
       description:
         "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
       image: 
-"https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+"Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
     
       price: 1000,
       location: "Aspen",
@@ -53,7 +53,7 @@ const sampleListings = [
       
       price: 800,
       location: "Portland",
-      country: "United States",
+      country: "Uni States",
     },
     {
       title: "Beachfront Paradise",
@@ -256,6 +256,7 @@ const sampleListings = [
       country: "Costa Rica",
     },
     {
+      /**/ 
       title: "Historic Cottage in Charleston",
       description:
         "Experience the charm of historic Charleston in this beautifully restored cottage with a private garden.",

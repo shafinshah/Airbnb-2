@@ -1,3 +1,6 @@
+if(process.env.NODE_ENV != "production"){
+require("dotenv").config();
+}
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -13,14 +16,15 @@ const { listingSchema ,reviewSchema} = require("./schema.js");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
-const LocalStrategy = require("passport-local");
-const User = require("./models/user.js");  
 
+const User = require("./models/user.js");  
+const LocalStrategy = require("passport-local")
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
+const dbUrl = process.env.Atlas;
 
 main()
 .then(()=>{
@@ -31,7 +35,7 @@ main()
 })
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbUrl);
     
 }
 
@@ -41,7 +45,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsmate);
 app.use(express.static(path.join(__dirname,"/public")));
-
+app.use(express.json());
 
 
 const sessionOptions = {
@@ -77,8 +81,12 @@ app.use((req,res,next)=>{
 });
 
 
-
-
+/*app.get("/serach",async(req,res)=>{
+    const query = req.query.search || '';
+ console.log(query);
+    
+res.redirect("/listings");
+})*/
 
 
 app.use("/listings", listingsRouter);
@@ -95,6 +103,11 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("listings/error.ejs",{message});
     //res.status(statusCode).send(message);
 });
+
+
+
+
+
 app.listen(port,()=>{
     console.log("server is listening to port 8080");
 

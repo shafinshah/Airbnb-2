@@ -15,7 +15,10 @@
   .card-text{
     font-size:smaller !important ;
   }
-  
+  .card-show{
+    margin-left: -1.5rem !important;
+  }
+ 
   
 }
  
@@ -29,12 +32,12 @@
     <div class="card-show col-3 offset-2" style="width: 18rem;">
         <h3><%= listings.title %></h3>
         <img src="<%= listings.image %>" class="card-img-show" alt="Listing-card">
-        <div class="card-body">
+        <div class="card-body review-body">
             <p class="card-text"> Owned by:  <b><%= listings.owner.username %></b></p>
-            <P class="card-text"><%= listings.description %></P>
-            <p class="card-text">&#8377 <%= listings.price.toLocaleString("en-IN") %></p>
-            <p class="card-text"> <%= listings.location %></p>
-            <p class="card-text"> <%= listings.country %></p>
+            <P class="card-text">Description: <%= listings.description %></P>
+            <p class="card-text">Price: &#8377 <%= listings.price.toLocaleString("en-IN") %></p>
+            <p class="card-text">Location:  <%= listings.location %></p>
+            <p class="card-text">Country: <%= listings.country %></p>
         </div>
       </div>
 </div>
@@ -61,6 +64,7 @@
 <hr>
 
 <% if(currUser){ %>
+  
 <div class="col-8 offset-2">
    
         <h4>Leave a Review</h4>
@@ -99,6 +103,7 @@
         
    
     </div>
+
     <% } %>
     <hr>
        
@@ -106,7 +111,7 @@
     </div>
     
 
-   
+   <div class="review">
     <div class="row col-6 offset-2">
         
         <p><b>All Review</b></p>
@@ -127,7 +132,7 @@
             <% } %>
     </div>
   
-           
+   </div> 
   
       
     </div>

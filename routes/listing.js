@@ -5,9 +5,73 @@ const wrapAsync = require("../utills/wrapAsync.js");
 
 const Listing = require("../models/listing.js");
 const {isLoggedIn, isOwner,validateListings} = require("../middleware.js");
+//search
+router.get("/search",async(req,res)=>{
+    const query = req.query.search || '';
+ 
+    
+let query2 = query.toUpperCase();
+const allListings = await Listing.find({});
+
+  const list = await allListings.filter(allListings => allListings.title.toUpperCase() === query2);
+    
+  
 
 
+    
+   console.log(list);
 
+  res.render("listings/search.ejs", {list})
+
+});
+//location
+router.get("/location",async(req,res)=>{
+    const query = req.query.search || '';
+
+  let query2 = query.toUpperCase();
+
+const allListings = await Listing.find({});
+  const list = await allListings.filter(allListings =>allListings.location.toUpperCase() === query2);
+    
+    console.log(list);
+
+  res.render("listings/search.ejs", {list})
+
+});
+
+//country
+router.get("/country",async(req,res)=>{
+    const query = req.query.search || '';
+ 
+    
+  let query2 = query.toUpperCase();
+
+const allListings = await Listing.find({});
+  const list = await allListings.filter(allListings => allListings.country.toUpperCase() === query2);
+    
+    console.log(list);
+
+  res.render("listings/search.ejs", {list})
+
+});
+
+//price
+
+router.get("/price",async(req,res)=>{
+    const query = req.query.search || '';
+ console.log(query);
+    
+
+const allListings = await Listing.find({});
+  const list = allListings.filter((allListings) =>{
+    return allListings.price <= query
+  });
+    
+    console.log(list);
+
+  res.render("listings/search.ejs", {list})
+
+});
 
 //index
 router.get("/",wrapAsync(async(req,res)=>{

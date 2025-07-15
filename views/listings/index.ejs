@@ -2,7 +2,12 @@
 <% layout("/layouts/boilerplate") %>
 <style>
 
-
+@media (max-width:380px){
+  #filters{
+    display: none !important;
+  }
+ 
+}
 
   #filters{
     display: flex;
@@ -34,74 +39,46 @@
     border: 1px solid black;
     border-radius: 1rem;
     height: 3.5rem;
+    width: 18rem;
     padding: 1rem;
     margin-left: 6rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     display: flex;
     align-items:center ;
   }
  
 </style>
 <body>
-<div id="filters">
-  
-  
-  <div class="filtters y">
-    <i>You can see <br>on our website </i>
-    </div>
-
-   <div class="filtters">
-<i class="fa-solid fa-umbrella-beach"></i><br>
-Beach
-  </div>
-  <div class="filtters">
-    <i class="fa-solid fa-hotel"></i><br>
-    Hotel
+  <div class="index-top">
+  <div class="search">
+ 
+        <div>
+<button class="btn btn-dark"class="filtter">Fillter Based On
+      </button>
       </div>
-      <div class="filtters">
-        <i class="fa-solid fa-sailboat"></i><br>
-        Rivers
-          </div>
+      <div class="div">
+    <form action="/listings/location" method="GET" class="d-flex">
+    <input type="text" name="search" placeholder="Location" class="form-control"  required>
+         <button type="submit" class="btn btn-outline-primary">Search</button>
+    </form>
         
-            <div class="filtters"> 
-    <i class="fa fa-tree" title="Forest"></i>  <br>
-    
-    Forest
-  </div>
-    <div class="filtters">     <!-- Forest Icon -->
-    <i class="fa fa-mountain" title="Mountain"></i>  <br>
+
+
+
   
-    Mountain
-  </div>
-    <div class="filtters">  <!-- Mountain Icon -->
-    <i class="fa fa-home" title="Farmhouse"></i>  <br>
-    
-    house
-  </div>
-    
-  <div class="filtters">  <!-- Mountain Icon -->
 
-    <i class="fa-solid fa-hill-rockslide"></i>   <br>
-Hills
-  </div>
-    
-  <div class="filtters">  <!-- Mountain Icon -->
+   <form action="/listings/country" method="GET" class="d-flex">
+    <input type="text" name="search" placeholder="Country"  class="form-control"  required >
+    <button type="submit" class="btn btn-outline-primary">Search</button>
+  </form>
 
-    <i class="fa-solid fa-bed"></i>   <br>
-Rooms
-  </div>
-    
-  <div class="filtters">  <!-- Mountain Icon -->
-
-    <i class="fa-solid fa-snowflake"></i>   <br>
-Arctics
-  </div>
-
-  <div class="filtters">
-    <i class="fa-solid fa-igloo"></i><br>
-    Igloo
-      </div>
-
-    
+   <form action="/listings/price" method="GET" class="d-flex">
+    <input type="text" name="search" placeholder="Max Price Range"   class="form-control"  required>
+    <button type="submit" class="btn btn-outline-primary">Search</button>
+  </form>
+      </div> 
+</div>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input
@@ -114,8 +91,7 @@ Arctics
       <label class="form-check-lable" for="flexSwitchCheckDefault">Display total after taxes</label>
     </div>
   </div>
-
-    </div>
+</div>
     <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
     <% for(let listings of allListings){  %>
       <a href="/listings/<%= listings._id %>" class="listings-link">
